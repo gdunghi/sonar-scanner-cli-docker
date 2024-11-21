@@ -44,6 +44,8 @@ ENV HOME=/tmp \
 # Copy Scanner installation from builder image
 COPY --from=builder /opt/sonar-scanner /opt/sonar-scanner
 
+RUN curl -sL https://rpm.nodesource.com/setup_22.x | sh
+
 RUN \
     dnf install -y git \
     && dnf install -y tar \
